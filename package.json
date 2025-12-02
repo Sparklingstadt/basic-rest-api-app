@@ -1,0 +1,20 @@
+{
+  "name": "basic-rest-api-app",
+  "version": "1.0.0",
+  "description": "このアプリはREST APIに従ってJSONを返却する学習目的のプロジェクトです",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sparklingstadt/basic-rest-api-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sparklingstadt/basic-rest-api-app/issues"
+  },
+  "homepage": "https://github.com/Sparklingstadt/basic-rest-api-app#readme"
+}
