@@ -7,6 +7,7 @@ let users = [
 let userId = 3
 
 const app = express()
+app.use(express.json())
 const port = 3000
 
 app.get('/', (_, res) => {
@@ -68,6 +69,22 @@ app.put('/users/:id', (req, res) => {
             error: [`User id:${req.params.id} not found`]
         })
     }
+
+    const updatedUser = {
+        ...user,
+        ...req.body
+    }
+    console.log(req.body)
+    console.log(updatedUser)
+
+    users = users.map(user => user.id === userId ? updatedUser : user)
+
+    res.json({
+        message: "success",
+        data: [
+            req.body
+        ]
+    })
 })
 
 app.delete('/users/:id', (req, res) => {
