@@ -14,11 +14,12 @@ test("GET /users return users", async () => {
 })
 
 test("POST /users returns new user", async () => {
+    let userName = "Charlie"
     const res = await fetch(localhost + "/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            name: "Charlie"
+            name: userName
         })
     })
     const json = await res.json(res.body)
@@ -53,6 +54,10 @@ test("PUT /users/:id returns updated user", async () => {
     expect(json.data[0]).toHaveProperty("name", "Alice")
 })
 
+// test("PUT /users/:id not found", async () => {
+
+// })
+
 test("DELETE /users/:id returns deleted user", async () => {
     const res = await fetch(localhost + "/users/1", {
         method: "DELETE"
@@ -61,4 +66,13 @@ test("DELETE /users/:id returns deleted user", async () => {
     expect(json.message).toBe("success")
     expect(json.data[0]).toHaveProperty("id", 1)
     expect(json.data[0]).toHaveProperty("name", "Alice")
+})
+
+test("DELETE /users/:id not found", async () => {
+    const res = await fetch(localhost + "/users/50", {
+        method: "DELETE"
+    })
+    const json = await res.json(res.body)
+    expect(json.message).toBe("failed")
+    expect(Array.isArray(json.errors))
 })
