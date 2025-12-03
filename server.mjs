@@ -1,6 +1,6 @@
 import express from 'express'
 
-const users = [
+let users = [
     { id: 1, name: "Antony" },
     { id: 2, name: "Bill" }
 ]
@@ -42,7 +42,8 @@ app.post('/users', (_, res) => {
 })
 
 app.get('/users/:id', (req, res) => {
-    const user = users.find(user => user.id === req.params.id)
+    const userId = parseInt(req.params.id)
+    const user = users.find(user => user.id === userId)
     if(!user) {
         return res.json({
             message: "failed",
@@ -59,32 +60,27 @@ app.get('/users/:id', (req, res) => {
 })
 
 app.put('/users/:id', (req, res) => {
-    const user = users.find(user => user.id === req.params.id)
+    const userId = parseInt(req.params.id)
+    const user = users.find(user => user.id === userId)
     if(!user){
         return res.json({
             message: "failed",
             error: [`User id:${req.params.id} not found`]
         })
     }
-
-    users = [
-        ...users.slice[0, req.params.id],
-        req.body,
-        ...users.slice[req.params.id + 1]
-
-    ]
 })
 
 app.delete('/users/:id', (req, res) => {
-    const deletedItem = users.find(user => user.id === req.params.id)
-    if(!deltedItem) {
+    const userId = parseInt(req.params.id)
+    const deletedItem = users.find(user => user.id === userId)
+    if(!deletedItem) {
         return res.json({
             message: "failed",
             errors: [`User id:${req.params.id} not found`]
         })
     }
 
-    users = users.filter(user => user.id !== req.params.id)
+    users = users.filter(user => user.id !== userId)
     res.json({
         message: "successs",
         data: [
