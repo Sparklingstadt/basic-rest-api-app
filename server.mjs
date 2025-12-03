@@ -67,7 +67,7 @@ app.put('/users/:id', (req, res) => {
     if(!user){
         return res.json({
             message: "failed",
-            error: [`User id:${req.params.id} not found`]
+            errors: [`User id:${req.params.id} not found`]
         })
     }
 
@@ -95,7 +95,7 @@ app.delete('/users/:id', (req, res) => {
     users = users.filter(user => user.id !== userId)
     
     res.json({
-        message: "successs",
+        message: "success",
         data: [
             deletedItem
         ]
