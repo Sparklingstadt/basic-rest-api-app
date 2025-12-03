@@ -54,9 +54,16 @@ test("PUT /users/:id returns updated user", async () => {
     expect(json.data[0]).toHaveProperty("name", "Alice")
 })
 
-// test("PUT /users/:id not found", async () => {
-
-// })
+test("PUT /users/:id not found", async () => {
+    const res = await fetch(localhost + "/users/51", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: 51, name: "Hoge" })
+    })
+    const json = await res.json(res.body)
+    expect(json.message).toBe("failed")
+    expect(Array.isArray(json.errors))
+})
 
 test("DELETE /users/:id returns deleted user", async () => {
     const res = await fetch(localhost + "/users/1", {
