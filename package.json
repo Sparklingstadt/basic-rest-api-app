@@ -4,7 +4,7 @@
   "description": "このアプリはREST APIに従ってJSONを返却する学習目的のプロジェクトです",
   "main": "greeting.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Sparklingstadt/basic-rest-api-app#readme",
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
   }
 }

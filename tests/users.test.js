@@ -21,3 +21,9 @@
  * 
  * 
  */
+
+test("GET / returns Hello, World!", async () => {
+    const res = await fetch("http://localhost:3000")
+    const text = await res.text(res.text)
+    expect(text).toBe("Hello, World!")
+})
