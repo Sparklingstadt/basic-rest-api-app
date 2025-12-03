@@ -42,28 +42,53 @@ app.post('/users', (_, res) => {
 })
 
 app.get('/users/:id', (req, res) => {
+    const user = users.find(user => user.id === req.params.id)
+    if(!user) {
+        return res.json({
+            message: "failed",
+            errors: [`User id:${req.params.id} not found`]
+        })
+    }
+
     res.json({
-        message: "hold",
+        message: "success",
         data: [
-            req.params.id
+            user
         ]
     })
 })
 
 app.put('/users/:id', (req, res) => {
-    res.json({
-        message: "hold",
-        data: [
-            req.params.id
-        ]
-    })
+    const user = users.find(user => user.id === req.params.id)
+    if(!user){
+        return res.json({
+            message: "failed",
+            error: [`User id:${req.params.id} not found`]
+        })
+    }
+
+    users = [
+        ...users.slice[0, req.params.id],
+        req.body,
+        ...users.slice[req.params.id + 1]
+
+    ]
 })
 
 app.delete('/users/:id', (req, res) => {
+    const deletedItem = users.find(user => user.id === req.params.id)
+    if(!deltedItem) {
+        return res.json({
+            message: "failed",
+            errors: [`User id:${req.params.id} not found`]
+        })
+    }
+
+    users = users.filter(user => user.id !== req.params.id)
     res.json({
-        message: "hold",
+        message: "successs",
         data: [
-            req.params.id
+            deletedItem
         ]
     })
 })
