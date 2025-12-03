@@ -25,9 +25,9 @@ Method Endpoint Status Description
 GET / 200 正常レスポンス
 GET /users 200 ユーザーデータ一覧
 POST /users/ 201 新規ユーザー作成
-GET /users/:id ユーザー個人データ
-PUT /users/:id ユーザー個人データ更新
-DELETE /users/:id ユーザー個人データ削除
+GET /users/:id 200 ユーザー個人データ
+PUT /users/:id 201 ユーザー個人データ更新
+DELETE /users/:id 203 ユーザー個人データ削除
 
 レスポンス例
 

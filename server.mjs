@@ -28,6 +28,7 @@ app.get('/users', (_, res) => {
 })
 
 app.post('/users', (_, res) => {
+    // 新規ユーザー作成は未実装
     users.push({
         id: userId,
         name: "new user"
@@ -70,13 +71,7 @@ app.put('/users/:id', (req, res) => {
         })
     }
 
-    const updatedUser = {
-        ...user,
-        ...req.body
-    }
-    console.log(req.body)
-    console.log(updatedUser)
-
+    const updatedUser = {...user, ...req.body }
     users = users.map(user => user.id === userId ? updatedUser : user)
 
     res.json({
@@ -98,6 +93,7 @@ app.delete('/users/:id', (req, res) => {
     }
 
     users = users.filter(user => user.id !== userId)
+    
     res.json({
         message: "successs",
         data: [
