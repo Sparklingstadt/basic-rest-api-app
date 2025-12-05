@@ -1,6 +1,11 @@
 import express from 'express'
 
-let users = [
+type Users = {
+    id: number,
+    name: string
+}
+
+let users: Users[] = [
     { id: 1, name: "Antony" },
     { id: 2, name: "Bill" }
 ]
