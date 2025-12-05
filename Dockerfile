@@ -13,4 +13,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["node", "server.mjs"]
+CMD ["npm", "run", "dev"]
