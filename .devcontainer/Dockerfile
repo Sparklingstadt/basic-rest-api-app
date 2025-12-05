@@ -1,3 +1,4 @@
+# syntac=docker/dockerfile:1
 FROM node:22
 
 # Install basic development tools
