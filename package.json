@@ -4,6 +4,7 @@
   "description": "このアプリはREST APIに従ってJSONを返却する学習目的のプロジェクトです",
   "main": "greeting.js",
   "scripts": {
+    "dev": "npx tsx ./server.ts",
     "test": "jest"
   },
   "repository": {
