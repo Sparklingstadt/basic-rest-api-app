@@ -20,6 +20,15 @@ docker compose up -d
 ```
 [http://localhost:3000](http:/localhost:3000)にアクセス
 
+## テスト
+
+```
+cd basic-rest-api
+npm i
+npm run dev
+npm run test
+```
+
 ## エンドポイント一覧
 
 Method / Endpoint / Status / Description
