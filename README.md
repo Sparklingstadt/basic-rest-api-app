@@ -87,6 +87,7 @@ GET /users/3 に失敗
     "message": "failed",
     "errors": ["user id:3 not found"]
 }
+```
 
 ## 今後の拡張予定
 
