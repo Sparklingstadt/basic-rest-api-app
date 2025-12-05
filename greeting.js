@@ -1,1 +1,2 @@
-console.log("Hello, world from Dev Container")
+var msg = "Hello, world!";
+console.log("Hello, world!");
