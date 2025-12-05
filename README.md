@@ -14,10 +14,11 @@ Docker Composeを用いてコンテナ内で起動できます
 ## セットアップ手順
 
 ```
-git clone git@github.com:sparklingstadt/basic-rest-api-app
+git clone git@github.com:sparklingstadt/basic-rest-api-app.git
 cd basic-rest-api-app
 docker compose up -d
 ```
+[http://localhost:3000](http:/localhost:3000)にアクセス
 
 ## エンドポイント一覧
 
