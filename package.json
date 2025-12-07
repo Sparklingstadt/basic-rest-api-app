@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "このアプリはREST APIに従ってJSONを返却する学習目的のプロジェクトです",
   "main": "greeting.js",
+  "type": "module",
   "scripts": {
     "dev": "npx tsx ./server.ts",
     "test": "jest"
